@@ -18,7 +18,13 @@ public class ComparatorSort {
             System.out.print(numbers[i].number + " ");
         }
 
-        Arrays.sort(numbers,comp);
+        Arrays.sort(numbers, new Comparator<Numbers2> (){
+
+            @Override
+            public int compare(Numbers2 o1, Numbers2 o2) {
+                return o1.number - o2.number;
+            }
+        });
         System.out.println();
 
         System.out.print("정렬 후 : ");
@@ -27,12 +33,15 @@ public class ComparatorSort {
         }
 
     }
+    /*
     static Comparator<Numbers2> comp = new Comparator<Numbers2>() {
         @Override
         public int compare(Numbers2 o1, Numbers2 o2) {
             return o1.number - o2.number;
         }
     };
+
+     */
 }
 
 class Numbers2 {
