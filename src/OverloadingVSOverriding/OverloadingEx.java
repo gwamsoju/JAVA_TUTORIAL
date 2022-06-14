@@ -3,26 +3,25 @@ package OverloadingVSOverriding;
 public class OverloadingEx {
 
     public static void main(String[] args) {
-        OverloadingTest ot = new OverloadingTest();
+        Practice practice = new Practice();
 
-        ot.test(); // 매개 변수가 없다.
-        ot.test(1,2); // 매개 변수 a의 값은 1, b의 값은 2이다.
-        ot.test("안녕하세요 !"); // 안녕하세요 !
+        practice.A(1); // 1
+        System.out.println(practice.A(1,2)); // 3
+        System.out.println(practice.A(1,2,3)); // 6
     }
 }
 
-class OverloadingTest{
+class Practice {
 
-    // 매개 변수 X
-    void test(){
-        System.out.println("매개 변수가 없다.");
+    public void A(int a){
+        System.out.println(a);
     }
-    // 매개 변수 2개
-    void test(int a , int b){
-        System.out.println("매개 변수 a의 값은 " + a + ", b의 값은 " + b +"이다.");
+
+    public int A(int a, int b){
+        return a + b;
     }
-    //매개 변수 1개
-    void test(String str){
-        System.out.println(str);
+
+    public int A(int a, int b, int c){
+        return a * b * c;
     }
 }
